@@ -1,0 +1,35 @@
+# WADY I OGRANICZENIA ALGORYTMU:
+# 1. Algorytm zawsze wykonuje jedno pełne przejście przez tablicę,
+#    Polceam z całego serca grę -- The Farmer was replace w którym za pomocą nauki pythona tworzy się skrypty do automatyzacji farmy ;)
+#    W przypadku pozyskiwania materiałów późniejszych potrzebne jest przejście kilka razy po tablicy 
+#   Link do Steama - https://store.steampowered.com/app/2060160/The_Farmer_Was_Replaced/
+# 2. Algorytm zwraca tylko wartość maksymalną,
+# 3. Algorytm nie obsługuje pustej tablicy bez dodatkowych zabezpieczeń.
+
+def find_max(table):
+    # Sprawdzenie, czy tablica nie jest pusta
+    if len(table) == 0:
+        print("Błąd: tablica jest pusta")
+        return None
+
+    # Na początku zakładamy, że pierwszy element jest największy
+    maks = table[0]
+
+    # Przechodzimy po pozostałych elementach tablicy
+    for indeks in range(1, len(table)):
+        # Jeśli aktualny element jest większy od maksimum
+        if table[indeks] > maks:
+            maks = table[indeks]
+
+    # Zwracamy największy znaleziony element
+    return maks
+
+
+# Przykładowe dane
+table = [4, 6, 2, 1, 3]
+
+# Wywołanie funkcji
+wynik = find_max(table)
+
+# Wyświetlenie wyniku
+print("Największy element w tablicy to:", wynik)
