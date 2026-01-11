@@ -1,6 +1,6 @@
 def bubble_sort(tablica):
     """
-   Cel: Opanować prosty algorytm sortowania przez porównywanie sąsiadów. Narysuj diagram blokowy, potem zaimplementuj.
+  Cel: Opanować prosty algorytm sortowania przez porównywanie sąsiadów. Narysuj diagram blokowy, potem zaimplementuj.
 ​
 
 Diagram blokowy (tekstowy opis):
@@ -12,14 +12,24 @@ Pętla zewnętrzna: i < n-1? → Tak: Pętla wewnętrzna j=0 do n-i-2.
 Jeśli tab[j] > tab[j+1]: Zamień → j++ → Koniec wewnętrznej?
 
 Nie: i++ → Koniec.
-​
-
-Implementacja Python:
-
-text
-def bubble_sort(arr):     n = len(arr)     for i in range(n):         for j in range(n - i - 1):             if arr[j] > arr[j + 1]:                 arr[j], arr[j + 1] = arr[j + 1], arr[j]     return arr
-Test: [64, 34, 25, 12, 22, 11, 90] → [11, 12, 22, 25, 34, 64, 90].
     """
+
+    # Diagram blokowy (opis tekstowy):
+    # START
+    # Inicjalizuj i = 0
+    # n = długość tablicy
+    #
+    # Czy i < n - 1?
+    # ├── NIE → STOP
+    # └── TAK
+    #      Inicjalizuj j = 0
+    #      Czy j < n - i - 1?
+    #      ├── NIE → i = i + 1 → powrót do sprawdzenia i
+    #      └── TAK
+    #           Czy tab[j] > tab[j + 1]?
+    #           ├── TAK → Zamień tab[j] i tab[j + 1]
+    #           └── NIE → bez zmiany
+    #           j = j + 1 → powrót do sprawdzenia j
 
     n = len(tablica)
 
